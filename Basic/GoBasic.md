@@ -20,6 +20,38 @@ Go语言是由Google于2006年开源的静态语言
 4. 区块链（以太坊、fabric）
 5. 微服务（go-zero、dapr、rpcx、kratos、dubbo-go、kitex）
 
+## 关于包（package）
+
+当我们创建好一个Go语言文件时，会自动创建一行代码：package xxx，这是Go语言区分于动态语言的重要标志，我们在其他包中引入这个包的内容时，我们会使用包名来调用相关内容，而动态语言如python是通过文件名来调用的。
+
+## HelloWorld
+
+这是一个简单的HelloWorld：
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+	fmt.Println("Hello World")
+}
+```
+
+注意在这个程序中：package和函数名都必须为main，这标识了这个程序的入口
+
+我们也可以在控制台中进行简单的操作：
+
+```shell
+go build xxx.go
+./xxx.exe
+go run xxx.go
+```
+
+上面三条语句，分别是：编译、运行编译后的exe文件、编译并运行
+
+**要注意的问题：不要在一个文件夹内使用两个及以上的main函数，这是不推荐的，我们尽量在多个文件夹中对多个入口函数的情况进行使用**
+
 ## 关于变量的定义方法
 
 基础变量定义：GO语言的变量定义出来之后是有一个初值的，int为0，string为''，这一点区别于C和Java
